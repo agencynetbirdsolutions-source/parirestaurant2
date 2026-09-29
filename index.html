@@ -154,6 +154,75 @@
 
     .center { text-align: center; }
 
+
+    /* ---------- Footer & Legal Pages ---------- */
+    .site-footer {
+      text-align: center;
+      padding: 4px 8px 22px;
+      color: rgba(243, 233, 220, 0.72);
+      font-size: 0.82rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-bottom: 8px;
+    }
+    .footer-links a {
+      color: var(--gold-light);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .footer-links a:hover { text-decoration: underline; }
+    .legal-page {
+      display: none;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 34px;
+    }
+    .legal-page.active { display: block; }
+    .legal-card {
+      background: var(--card);
+      border: 1px solid rgba(230, 184, 92, 0.25);
+      border-radius: 16px;
+      padding: 24px 20px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+    }
+    .legal-card h1 {
+      margin-bottom: 8px;
+      font-size: 1.85rem;
+    }
+    .legal-card h2 {
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    .legal-card ul {
+      margin: 0 0 12px;
+      padding-left: 20px;
+    }
+    .legal-card li { margin-bottom: 7px; }
+    .legal-meta {
+      color: rgba(243, 233, 220, 0.68);
+      font-size: 0.86rem;
+      margin-bottom: 18px;
+    }
+    .back-home {
+      display: inline-flex;
+      margin-top: 12px;
+      color: var(--gold-light);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .back-home:hover { text-decoration: underline; }
+    .legal-note {
+      padding: 12px 14px;
+      border-left: 3px solid var(--gold);
+      background: rgba(230, 184, 92, 0.07);
+      border-radius: 8px;
+      margin: 14px 0;
+    }
+
     @media (min-width: 768px) {
       .wrap { max-width: 600px; padding-top: 32px; }
       h1 { font-size: 2.2rem; }
@@ -226,7 +295,185 @@
       </a>
     </section>
 
+    <!-- Footer / Legal navigation -->
+    <footer class="site-footer">
+      <nav class="footer-links" aria-label="Legal">
+        <a href="#privacy" data-page="privacy">Privacy Policy</a>
+        <a href="#terms" data-page="terms">Terms &amp; Conditions</a>
+      </nav>
+      <div>© <span id="year"></span> Pari Restaurant. All rights reserved.</div>
+    </footer>
+
   </main>
+
+  <!-- Privacy Policy -->
+  <section id="privacy" class="legal-page" aria-labelledby="privacy-title">
+    <div class="legal-card">
+      <h1 id="privacy-title">Privacy Policy</h1>
+      <p class="legal-meta">Effective Date: September 29, 2026</p>
+
+      <p>Pari Restaurant ("Pari Restaurant", "we", "us", or "our") respects your privacy. This Privacy Policy explains what information may be collected when you visit this website, how it may be used, and the choices available to you.</p>
+
+      <div class="legal-note">
+        <strong>Important:</strong> This website is primarily an informational and contact page. We do not ask you to enter payment-card, bank-account, government-ID, or other sensitive financial information on this website.
+      </div>
+
+      <h2>1. Information We May Collect</h2>
+      <p>Depending on how you interact with the website, we may receive:</p>
+      <ul>
+        <li><strong>Contact information:</strong> If you contact us through WhatsApp or another communication channel, we may receive the information you choose to provide, such as your name, phone number, message, booking enquiry, or other details.</li>
+        <li><strong>Website usage information:</strong> Basic technical information such as browser type, device type, approximate location derived from technical information, IP address, referring page, and pages visited may be processed by hosting, security, analytics, or advertising services when those services are enabled.</li>
+        <li><strong>Cookies and similar technologies:</strong> This website or third-party services used with it may use cookies or similar technologies for functionality, security, analytics, measurement, or advertising.</li>
+      </ul>
+
+      <h2>2. How We Use Information</h2>
+      <p>Information may be used to:</p>
+      <ul>
+        <li>Respond to your questions, enquiries, and WhatsApp messages.</li>
+        <li>Provide information about our menu, offers, restaurant services, and availability.</li>
+        <li>Maintain, secure, troubleshoot, and improve the website.</li>
+        <li>Understand website traffic and campaign performance where analytics or advertising measurement tools are enabled.</li>
+        <li>Prevent fraud, abuse, spam, or other misuse of the website.</li>
+        <li>Comply with applicable legal obligations.</li>
+      </ul>
+
+      <h2>3. WhatsApp and Third-Party Services</h2>
+      <p>When you select a WhatsApp button on this website, you are redirected to WhatsApp to communicate with us. WhatsApp is a third-party service and its own privacy policy and terms apply to information processed on its platform.</p>
+      <p>We may also use third-party website hosting, security, analytics, advertising, or measurement services. Where such services are enabled, they may process technical information and identifiers according to their own policies and applicable requirements.</p>
+
+      <h2>4. Google Ads, Analytics and Cookies</h2>
+      <p>If Google Ads, Google Analytics, conversion measurement, remarketing, or other Google services are installed on this website, Google and its service providers may use cookies or similar technologies to measure visits, conversions, campaign performance, security, or advertising interactions.</p>
+      <p>Such services may process information such as the URL of the page visited, IP address, browser/device information, and cookie or advertising identifiers, subject to the applicable Google policies and user settings.</p>
+      <p>For more information, you can review Google's policies and controls through <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google Advertising Technologies</a>.</p>
+
+      <h2>5. Cookies and Your Choices</h2>
+      <p>You can control or delete cookies through your browser settings. If advertising or analytics services are enabled, your available choices may also depend on the settings and consent requirements applicable to your location.</p>
+      <p>Disabling some cookies may affect certain website functionality or measurement features.</p>
+
+      <h2>6. Information Sharing</h2>
+      <p>We do not sell your personal information. We may share or allow access to information with service providers when reasonably necessary to operate the website, provide communications, measure advertising or analytics, protect the website, or comply with law.</p>
+      <p>Where third-party advertising or measurement services are used, information may be processed by those providers in accordance with their applicable policies and legal requirements.</p>
+
+      <h2>7. Data Security</h2>
+      <p>We take reasonable steps to protect information handled through this website and our communication channels. However, no internet transmission or electronic storage system can be guaranteed to be completely secure.</p>
+
+      <h2>8. Data Retention</h2>
+      <p>We retain information only for as long as reasonably necessary for the purpose for which it was collected, to provide requested services, maintain business records, resolve disputes, prevent abuse, or comply with legal obligations.</p>
+
+      <h2>9. Children's Privacy</h2>
+      <p>This website is not directed at children under 13, and we do not knowingly request or collect personal information from children under 13 through this website.</p>
+
+      <h2>10. Your Privacy Rights</h2>
+      <p>Depending on your location and applicable law, you may have rights relating to access, correction, deletion, restriction, objection, or other control over your personal information. To make a privacy-related request, contact us through the WhatsApp contact option on this website.</p>
+
+      <h2>11. Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy when our website, services, tracking technologies, or legal requirements change. The updated version will be posted on this page with a revised effective date.</p>
+
+      <h2>12. Contact Us</h2>
+      <p>For privacy questions or requests, contact Pari Restaurant through WhatsApp using the contact button on this website.</p>
+
+      <a class="back-home" href="#">← Back to Pari Restaurant</a>
+    </div>
+  </section>
+
+  <!-- Terms & Conditions -->
+  <section id="terms" class="legal-page" aria-labelledby="terms-title">
+    <div class="legal-card">
+      <h1 id="terms-title">Terms &amp; Conditions</h1>
+      <p class="legal-meta">Effective Date: September 29, 2026</p>
+
+      <p>These Terms &amp; Conditions ("Terms") govern your use of the Pari Restaurant website. By using this website, you agree to these Terms.</p>
+
+      <h2>1. Website Purpose</h2>
+      <p>This website provides general information about Pari Restaurant, its food offerings, promotional information, and a way to contact the restaurant through WhatsApp.</p>
+
+      <h2>2. Information and Offers</h2>
+      <p>Menu items, prices, availability, photographs, opening information, promotions, and other details may change without notice. Any offer shown on this website, including the <strong>Flat 10% OFF on Food</strong> promotion, is subject to applicable terms, availability, and confirmation by Pari Restaurant.</p>
+      <p>An offer displayed on the website does not by itself create a guaranteed booking, reservation, discount entitlement, or purchase agreement.</p>
+
+      <h2>3. WhatsApp Communication</h2>
+      <p>When you click a WhatsApp button, you choose to communicate with Pari Restaurant through WhatsApp. You are responsible for reviewing the details of any message before sending it and for complying with WhatsApp's applicable terms and policies.</p>
+
+      <h2>4. Acceptable Use</h2>
+      <p>You agree not to misuse this website, interfere with its operation, attempt unauthorized access, introduce malicious code, scrape or copy content in a harmful manner, or use the website for unlawful purposes.</p>
+
+      <h2>5. Intellectual Property</h2>
+      <p>Unless otherwise stated, website text, branding, graphics, photographs, logos, and other original content displayed on this website belong to Pari Restaurant or are used with permission. You may not reproduce, republish, modify, or commercially exploit such content without appropriate permission.</p>
+
+      <h2>6. Third-Party Links and Services</h2>
+      <p>This website may connect you to third-party services such as WhatsApp, Google services, hosting providers, analytics platforms, or advertising platforms. Pari Restaurant does not control the policies or availability of third-party services. Your use of those services is subject to their respective terms and privacy policies.</p>
+
+      <h2>7. No Warranty</h2>
+      <p>This website and its information are provided on an "as available" basis. We make reasonable efforts to keep information useful and current, but we do not guarantee that the website will always be uninterrupted, error-free, complete, or current.</p>
+
+      <h2>8. Limitation of Liability</h2>
+      <p>To the extent permitted by applicable law, Pari Restaurant will not be responsible for losses arising from website interruptions, third-party services, technical issues, inaccurate user-provided information, or reliance on information that has changed after publication.</p>
+
+      <h2>9. Restaurant Transactions</h2>
+      <p>Any food order, reservation, payment, cancellation, refund, discount, or other transaction is subject to the restaurant's applicable policies and confirmation. The information on this website should not be treated as a substitute for confirmation of a specific transaction.</p>
+
+      <h2>10. Privacy</h2>
+      <p>Your use of this website is also subject to our <a href="#privacy" data-page="privacy">Privacy Policy</a>, which explains how information may be handled.</p>
+
+      <h2>11. Changes to These Terms</h2>
+      <p>We may update these Terms from time to time. Changes become effective when the revised Terms are published on this page. Your continued use of the website after an update means you continue to use the website under the revised Terms.</p>
+
+      <h2>12. Governing Law</h2>
+      <p>These Terms are intended to be interpreted in accordance with applicable laws. Any dispute will be subject to the jurisdiction of the courts having appropriate jurisdiction over Pari Restaurant, subject to applicable law.</p>
+
+      <h2>13. Contact</h2>
+      <p>If you have questions about these Terms, contact Pari Restaurant through the WhatsApp contact option on this website.</p>
+
+      <a class="back-home" href="#">← Back to Pari Restaurant</a>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const home = document.querySelector('main.wrap');
+      const privacy = document.getElementById('privacy');
+      const terms = document.getElementById('terms');
+      const pages = { privacy, terms };
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      function showPage(page) {
+        Object.values(pages).forEach(function (el) {
+          el.classList.remove('active');
+        });
+
+        if (page && pages[page]) {
+          home.style.display = 'none';
+          pages[page].classList.add('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          document.title = page === 'privacy'
+            ? 'Privacy Policy – Pari Restaurant'
+            : 'Terms & Conditions – Pari Restaurant';
+        } else {
+          home.style.display = '';
+          document.title = 'Pari Restaurant – Trusted Family Restaurant | Flat 10% OFF on Food';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+
+      function route() {
+        const page = window.location.hash.replace('#', '').toLowerCase();
+        showPage(page === 'privacy' || page === 'terms' ? page : '');
+      }
+
+      document.querySelectorAll('[data-page]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          const page = this.getAttribute('data-page');
+          if (window.location.hash !== '#' + page) {
+            window.location.hash = page;
+          }
+        });
+      });
+
+      window.addEventListener('hashchange', route);
+      route();
+    })();
+  </script>
 
 </body>
 </html>
