@@ -1,313 +1,231 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Pari Restaurant – Trusted Family Restaurant | Flat 10% OFF on Food</title>
-  <meta name="description" content="Pari Restaurant – a trusted family restaurant serving delicious biryani, curries, tandoori starters and fresh naan. Flat 10% OFF on food. Get in touch on WhatsApp.">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><title>Pari Restaurant – Trusted Family Restaurant | Flat 10% OFF on Food</title><meta name="description" content="Pari Restaurant – a trusted family restaurant serving biryani, curries, tandoori starters and fresh naan. Flat 10% OFF on food. Get in touch on WhatsApp."><style>
+:root{
+  color-scheme: light;
+  --paper:#F4F3EF;
+  --ink:#12141A;
+  --ink-soft:#4A4F5C;
+  --cobalt:#2447F5;
+  --cobalt-deep:#1631B8;
+  --sun:#FFC93C;
+  --line:#D9D7CF;
+  --wa:#25D366;
+  --display:'Bricolage Grotesque','Arial Black',Arial,sans-serif;
+  --body:'Hind','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper);overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom,0px)}
+img,svg{max-width:100%}
+a{color:var(--cobalt)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
+/* ===== FULL-SCREEN PHONE BANNER (landing par aate hi poori screen) ===== */
+.screen-banner{position:relative;width:100%;height:100vh;height:100dvh;min-height:420px;overflow:hidden;background:#000;isolation:isolate;animation:bannerIn .8s ease both}
+.sb-bg{position:absolute;inset:-30px;background-size:cover;background-position:center;filter:blur(26px) brightness(.75);z-index:0}
+.sb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;z-index:1;display:block}
+.sb-link{position:absolute;inset:0;z-index:2;display:block}
+.sb-fallback{display:none;position:absolute;inset:0;z-index:1;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;color:#fff;background:linear-gradient(160deg,var(--cobalt-deep),var(--cobalt))}
+.sb-fallback strong{font-family:var(--display);font-size:clamp(34px,11vw,60px);line-height:1.05}
+.sb-fallback span{margin-top:10px;color:#E4E9FF}
+.screen-banner.no-img .sb-fallback{display:flex}
+.screen-banner.no-img .sb-bg{display:none}
+.sb-controls{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;padding:56px 16px calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,rgba(10,12,18,.82),rgba(10,12,18,0));pointer-events:none}
+.sb-controls a{pointer-events:auto}
+.sb-controls .btn-wa{min-height:54px;width:min(100%,380px)}
+.scroll-hint{position:absolute;left:50%;bottom:calc(10px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:3;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.45);display:grid;place-items:center;text-decoration:none}
+.scroll-hint svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.5;animation:bob 1.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@keyframes bannerIn{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
 
-    :root {
-      --gold: #e6b85c;
-      --gold-light: #f6dda0;
-      --dark: #150d08;
-      --card: rgba(255, 255, 255, 0.06);
-      --text: #f3e9dc;
-      --green: #1faa4b;
-      --green-dark: #128a37;
-    }
+/* ===== header ===== */
+.site-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+.brand{font-family:var(--display);font-weight:800;font-size:20px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px;letter-spacing:-.01em}
+.brand svg{width:30px;height:30px;flex:none}
+.head-cta{font-weight:600;font-size:15px;color:#fff;background:var(--ink);padding:10px 18px;border-radius:999px;text-decoration:none;white-space:nowrap}
 
-    html { scroll-behavior: smooth; }
+/* ===== hero ===== */
+.hero{padding:16px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(36px,10vw,68px);line-height:1.03;letter-spacing:-.025em;margin:0 0 16px}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--sun) 62%);padding:0 .08em}
+.lead{color:var(--ink-soft);font-size:clamp(17px,4.4vw,20px);max-width:34ch;margin:0 0 26px}
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:58px;padding:14px 28px;border-radius:999px;background:var(--wa);color:#04210F;font-weight:600;font-size:18px;text-decoration:none;width:100%;max-width:380px;animation:ring 2.4s ease-out infinite;transition:transform .15s}
+.btn-wa svg{width:26px;height:26px;fill:#04210F;flex:none}
+.btn-wa:active{transform:scale(.97)}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.hero-note{font-size:14px;color:var(--ink-soft);margin:14px 0 0}
 
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--text);
-      line-height: 1.6;
-      background: radial-gradient(circle at top, #3a2314 0%, var(--dark) 60%);
-      background-attachment: fixed;
-      min-height: 100vh;
-    }
-
-    .wrap {
-      max-width: 520px;
-      margin: 0 auto;
-      padding: 20px 16px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-    }
-
-    /* ---------- Banner ---------- */
-    .banner {
-      display: block;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(230, 184, 92, 0.45);
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.55);
-    }
-    .banner img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    /* ---------- Buttons ---------- */
-    .btn-wa {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: linear-gradient(135deg, var(--green), var(--green-dark));
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.05rem;
-      padding: 15px 22px;
-      border-radius: 14px;
-      border: 1px solid #47d275;
-      box-shadow: 0 6px 20px rgba(31, 170, 75, 0.35);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(31, 170, 75, 0.5); }
-    .btn-wa svg { width: 26px; height: 26px; fill: #fff; flex-shrink: 0; }
-
-    /* ---------- Content ---------- */
-    .card {
-      background: var(--card);
-      border: 1px solid rgba(230, 184, 92, 0.25);
-      border-radius: 16px;
-      padding: 22px 20px;
-    }
-
-    h1 {
-      margin: 0 0 6px;
-      font-size: 1.9rem;
-      line-height: 1.15;
-      color: var(--gold-light);
-      font-weight: 700;
-    }
-
-    .tagline {
-      margin: 0 0 14px;
-      color: var(--gold);
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    h2 {
-      margin: 0 0 10px;
-      font-size: 1.3rem;
-      color: var(--gold-light);
-      font-weight: 600;
-    }
-
-    p { margin: 0 0 12px; }
-    p:last-child { margin-bottom: 0; }
-
-    .offer {
-      text-align: center;
-      background: linear-gradient(135deg, #f6dda0, #d9a441);
-      color: #4a0e0e;
-      border-radius: 16px;
-      padding: 18px 16px;
-    }
-    .offer strong { display: block; font-size: 2.2rem; line-height: 1.1; }
-    .offer span { font-weight: 600; letter-spacing: 1px; }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .menu-item {
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(230, 184, 92, 0.2);
-      border-radius: 12px;
-      padding: 12px;
-      text-align: center;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .why-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .why-list li {
-      padding: 8px 0 8px 28px;
-      position: relative;
-      border-bottom: 1px dashed rgba(230, 184, 92, 0.2);
-    }
-    .why-list li:last-child { border-bottom: 0; }
-    .why-list li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    .center { text-align: center; }
+/* viewfinder + aperture */
+.finder{position:relative;width:min(88vw,400px);margin:0 auto;aspect-ratio:1/1;background:var(--ink);border-radius:20px;display:grid;place-items:center;overflow:hidden}
+.finder::before,.finder::after{content:"";position:absolute;width:34px;height:34px;border:3px solid var(--sun);pointer-events:none;z-index:2}
+.finder::before{top:14px;left:14px;border-right:0;border-bottom:0}
+.finder::after{bottom:14px;right:14px;border-left:0;border-top:0}
+.finder .c2,.finder .c3{position:absolute;width:34px;height:34px;border:3px solid var(--sun);z-index:2}
+.finder .c2{top:14px;right:14px;border-left:0;border-bottom:0}
+.finder .c3{bottom:14px;left:14px;border-right:0;border-top:0}
+.rec{position:absolute;top:20px;left:0;right:0;text-align:center;z-index:2;font-size:13px;color:#fff;display:flex;gap:8px;align-items:center;justify-content:center}
+.rec i{width:9px;height:9px;border-radius:50%;background:#FF3B3B;animation:blink 1.1s steps(2,jump-none) infinite}
+@keyframes blink{50%{opacity:.15}}
+#iris{width:86%;height:86%;display:block}
+.ring-rot{transform-origin:200px 200px;animation:spin 40s linear infinite}
+.blades{transform-origin:200px 200px;animation:open 5s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes open{0%,100%{transform:rotate(0deg) scale(1)}50%{transform:rotate(28deg) scale(.82)}}
+.lens{transform-origin:200px 200px;animation:glint 5s ease-in-out infinite}
+@keyframes glint{0%,100%{transform:scale(.9);opacity:.85}50%{transform:scale(1.12);opacity:1}}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;z-index:3;pointer-events:none;animation:flash 5s ease-in-out infinite}
+@keyframes flash{0%,46%,56%,100%{opacity:0}50%{opacity:.75}}
 
 
-    /* ---------- Footer & Legal Pages ---------- */
-    .site-footer {
-      text-align: center;
-      padding: 4px 8px 22px;
-      color: rgba(243, 233, 220, 0.72);
-      font-size: 0.82rem;
-    }
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px 16px;
-      margin-bottom: 8px;
-    }
-    .footer-links a {
-      color: var(--gold-light);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .footer-links a:hover { text-decoration: underline; }
-    .legal-page {
-      display: none;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 20px 16px 34px;
-    }
-    .legal-page.active { display: block; }
-    .legal-card {
-      background: var(--card);
-      border: 1px solid rgba(230, 184, 92, 0.25);
-      border-radius: 16px;
-      padding: 24px 20px;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
-    }
-    .legal-card h1 {
-      margin-bottom: 8px;
-      font-size: 1.85rem;
-    }
-    .legal-card h2 {
-      margin-top: 24px;
-      margin-bottom: 8px;
-    }
-    .legal-card ul {
-      margin: 0 0 12px;
-      padding-left: 20px;
-    }
-    .legal-card li { margin-bottom: 7px; }
-    .legal-meta {
-      color: rgba(243, 233, 220, 0.68);
-      font-size: 0.86rem;
-      margin-bottom: 18px;
-    }
-    .back-home {
-      display: inline-flex;
-      margin-top: 12px;
-      color: var(--gold-light);
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .back-home:hover { text-decoration: underline; }
-    .legal-note {
-      padding: 12px 14px;
-      border-left: 3px solid var(--gold);
-      background: rgba(230, 184, 92, 0.07);
-      border-radius: 8px;
-      margin: 14px 0;
-    }
+/* ===== BIG HIGHLIGHTS ===== */
+.big{display:grid;grid-template-columns:1fr;gap:0}
+.big-item{padding:34px 20px;text-align:center;border-bottom:4px solid var(--ink)}
+.big-item:last-child{border-bottom:0}
+.big-item .num{display:block;font-family:var(--display);font-weight:800;font-size:clamp(68px,22vw,150px);line-height:.95;letter-spacing:-.04em}
+.big-item .cap{display:block;font-family:var(--display);font-weight:700;font-size:clamp(22px,6.4vw,38px);line-height:1.1;margin-top:8px}
+.big-item .sub{display:block;font-size:clamp(15px,4vw,18px);margin-top:8px;opacity:.85}
+.b1{background:var(--sun);color:var(--ink)}
+.b2{background:var(--cobalt);color:#fff}
+.b3{background:var(--ink);color:#fff}
+.b3 .num{color:var(--sun)}
+.b1 .num{animation:pop 2.4s ease-in-out infinite}
+.b2 .num{animation:pop 2.4s ease-in-out .8s infinite}
+.b3 .num{animation:pop 2.4s ease-in-out 1.6s infinite}
+@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.big-cta{background:var(--paper);padding:24px 20px;display:flex;justify-content:center}
+@media (min-width:760px){
+  .big{grid-template-columns:repeat(3,1fr)}
+  .big-item{border-bottom:0;border-right:4px solid var(--ink);padding:56px 24px}
+  .big-item:last-child{border-right:0}
+}
 
-    @media (min-width: 768px) {
-      .wrap { max-width: 600px; padding-top: 32px; }
-      h1 { font-size: 2.2rem; }
-    }
-  </style>
-</head>
-<body>
+/* ===== film strip marquee ===== */
+.strip{background:var(--ink);color:#fff;overflow:hidden;position:relative;padding:22px 0;border-block:6px solid var(--ink)}
+.strip::before,.strip::after{content:"";position:absolute;left:0;right:0;height:6px;background:radial-gradient(circle,var(--paper) 2px,transparent 2.5px) 0 0/18px 6px repeat-x}
+.strip::before{top:0}.strip::after{bottom:0}
+.track{display:flex;gap:46px;width:max-content;animation:slide 26s linear infinite;font-family:var(--display);font-weight:700;font-size:clamp(20px,5vw,28px);white-space:nowrap}
+.track span::after{content:"✦";color:var(--sun);margin-left:46px}
+@keyframes slide{to{transform:translateX(-50%)}}
 
-  <main class="wrap">
+/* ===== sections ===== */
+.sec{padding:56px 0}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,7vw,44px);line-height:1.08;letter-spacing:-.02em;margin:0 0 10px}
+.sec-sub{color:var(--ink-soft);margin:0 0 30px;max-width:50ch}
 
-    <!-- Phone banner (clickable → WhatsApp) -->
-    <a class="banner" href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener">
-      <img src="pari.png" alt="Pari Restaurant – Trusted Family Restaurant, Flat 10% OFF on Food" width="941" height="1672">
-    </a>
+.svc{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.svc li{display:grid;grid-template-columns:1fr;gap:4px;padding:22px 0;border-bottom:1px solid var(--line)}
+.svc h3{margin:0;font-family:var(--display);font-size:24px;letter-spacing:-.01em}
+.svc p{margin:0;color:var(--ink-soft)}
+.svc a{font-weight:600;font-size:15px;margin-top:4px}
 
-    <!-- WhatsApp button -->
-    <a class="btn-wa" href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .18 5.32.18 11.86c0 2.09.55 4.13 1.59 5.93L0 24l6.35-1.66a11.83 11.83 0 0 0 5.69 1.45h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.39-8.45zM12.05 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.77.99 1.01-3.67-.24-.38a9.87 9.87 0 0 1-1.52-5.3c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.45-4.44 9.89-9.86 9.89zm5.43-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
-      Get in Touch on WhatsApp
-    </a>
+.why{background:var(--cobalt);color:#fff}
+.why h2{color:#fff}
+.why .sec-sub{color:#DCE3FF}
+.why-list{display:grid;gap:22px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+.why-list li{border-left:4px solid var(--sun);padding-left:16px}
+.why-list b{display:block;font-family:var(--display);font-size:21px;margin-bottom:2px}
+.why-list span{color:#E4E9FF}
 
-    <!-- About -->
-    <section class="card">
-      <h1>Pari Restaurant</h1>
-      <p class="tagline">Trusted Family Restaurant</p>
-      <p>Welcome to <strong>Pari Restaurant</strong>, a warm and welcoming place where good food and good company come together. We are a family restaurant built on one simple promise: fresh, tasty food served with care.</p>
-      <p>From aromatic biryani and rich, creamy curries to smoky tandoori starters and freshly baked naan, every dish is prepared to give you the true taste of home-style Indian cooking in a comfortable, cozy setting.</p>
-    </section>
+.steps{display:grid;gap:20px;grid-template-columns:1fr;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding-left:64px;min-height:48px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:46px;height:46px;border-radius:50%;background:var(--ink);color:var(--sun);display:grid;place-items:center;font-family:var(--display);font-size:22px;font-weight:800}
+.steps h3{margin:0 0 2px;font-family:var(--display);font-size:20px}
+.steps p{margin:0;color:var(--ink-soft)}
 
-    <!-- Offer -->
-    <section class="offer">
-      <span>FLAT</span>
-      <strong>10% OFF</strong>
-      <span>ON FOOD</span>
-    </section>
+details{border-bottom:1px solid var(--line);padding:16px 0}
+details:first-of-type{border-top:2px solid var(--ink)}
+summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:32px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:26px;color:var(--cobalt);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:10px 0 0;color:var(--ink-soft)}
 
-    <!-- Menu highlights -->
-    <section class="card">
-      <h2>Our Specialties</h2>
-      <p>A taste of what you can enjoy at Pari Restaurant:</p>
-      <div class="menu-grid">
-        <div class="menu-item">🍛 Biryani</div>
-        <div class="menu-item">🥘 Rich Creamy Curries</div>
-        <div class="menu-item">🧀 Paneer Tikka</div>
-        <div class="menu-item">🫓 Fresh Naan</div>
-        <div class="menu-item">🥗 Fresh Salads</div>
-        <div class="menu-item">🌿 Chutneys &amp; Sides</div>
-      </div>
-    </section>
+.cta-band{background:var(--ink);color:#fff;border-radius:22px;padding:30px 22px;display:grid;gap:18px}
+.cta-band h2{color:#fff;margin:0}
+.cta-band p{margin:0;color:#C9CCD6}
 
-    <!-- Why choose us -->
-    <section class="card">
-      <h2>Why Choose Pari Restaurant?</h2>
-      <ul class="why-list">
-        <li>Trusted family restaurant, perfect for lunch and dinner with loved ones</li>
-        <li>Fresh, flavourful food made with quality ingredients</li>
-        <li>Cozy, elegant ambience with a warm atmosphere</li>
-        <li>Flat 10% OFF on food</li>
-        <li>Easy to reach us, just message on WhatsApp</li>
-      </ul>
-    </section>
+.disclaimer{border:1px dashed #9A98A0;border-radius:14px;padding:16px 18px;color:var(--ink-soft);font-size:14.5px}
+footer{padding:36px 0 110px;margin-top:44px;border-top:2px solid var(--ink);color:var(--ink-soft);font-size:15px}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0 0 14px;padding:0;list-style:none}
+.foot-links a{color:var(--ink);font-weight:500}
 
-    <!-- Final CTA -->
-    <section class="card center">
-      <h2>Want to Know More?</h2>
-      <p>Message us on WhatsApp to get our menu, offers and other details. We will be happy to help you.</p>
-      <a class="btn-wa" href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .18 5.32.18 11.86c0 2.09.55 4.13 1.59 5.93L0 24l6.35-1.66a11.83 11.83 0 0 0 5.69 1.45h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.39-8.45zM12.05 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.77.99 1.01-3.67-.24-.38a9.87 9.87 0 0 1-1.52-5.3c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.45-4.44 9.89-9.86 9.89zm5.43-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
-        Chat on WhatsApp
-      </a>
-    </section>
+/* floating whatsapp */
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;align-items:center;gap:10px;background:var(--wa);color:#04210F;text-decoration:none;padding:0 20px 0 16px;height:58px;border-radius:999px;font-weight:600;font-size:17px;box-shadow:0 8px 24px rgba(0,0,0,.3);animation:ring 2.4s ease-out infinite}
+.fab svg{width:30px;height:30px;fill:#04210F}
+.fab{transition:opacity .3s,transform .3s}
+.fab.hide{opacity:0;transform:translateY(20px);pointer-events:none}
 
-    <!-- Footer / Legal navigation -->
-    <footer class="site-footer">
-      <nav class="footer-links" aria-label="Legal">
-        <a href="#privacy" data-page="privacy">Privacy Policy</a>
-        <a href="#terms" data-page="terms">Terms &amp; Conditions</a>
-      </nav>
-      <div>© <span id="year"></span> Pari Restaurant. All rights reserved.</div>
-    </footer>
+/* policy pages */
+.policy{display:none;position:fixed;inset:0;z-index:100;background:var(--paper);overflow-y:auto;-webkit-overflow-scrolling:touch;padding:calc(20px + env(safe-area-inset-top,0px)) 0 calc(60px + env(safe-area-inset-bottom,0px))}
+.policy:target{display:block}
+.policy .wrap{max-width:760px}
+.policy h2{margin-top:10px}
+.policy h3{font-family:var(--display);font-size:20px;margin:28px 0 6px}
+.policy p,.policy li{font-size:16.5px;color:#2B2F3A}
+.policy ul{padding-left:22px}
+.back{display:inline-block;font-weight:600;text-decoration:none;padding:10px 0}
+.updated{color:var(--ink-soft);font-size:14px}
 
-  </main>
+@media (min-width:760px){
+  .hero{padding:32px 0 76px}
+  .hero-grid{grid-template-columns:1.1fr .9fr;gap:48px}
+  .svc li{grid-template-columns:1.1fr 2fr auto;align-items:center;gap:20px}
+  .svc a{margin:0}
+  .why-list{grid-template-columns:repeat(2,1fr);gap:28px}
+  .steps{grid-template-columns:repeat(3,1fr);gap:28px}
+  .cta-band{grid-template-columns:1.4fr auto;align-items:center;padding:38px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;scroll-behavior:auto!important}
+}
 
-  <!-- Privacy Policy -->
-  <section id="privacy" class="legal-page" aria-labelledby="privacy-title">
+/* Pari legal pages */
+.legal-page{display:none;max-width:760px;margin:0 auto;padding:20px 16px 34px;color:var(--ink)}
+.legal-page.active{display:block}
+.legal-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 20px;box-shadow:0 10px 35px rgba(0,0,0,.08)}
+.legal-card h1,.legal-card h2{font-family:var(--display);color:var(--ink)}
+.legal-card h2{margin-top:24px}
+.legal-card p,.legal-card li{color:var(--ink-soft)}
+.legal-card a{color:var(--blue)}
+.legal-meta{font-size:14px;color:var(--ink-soft);margin-bottom:18px}
+.legal-note{padding:12px 14px;border-left:3px solid var(--yellow);background:#fff8e5;border-radius:8px;margin:14px 0}
+.back-home{display:inline-block;margin-top:12px;color:var(--blue);font-weight:700;text-decoration:none}
+</style></head><body id="top">
+<section class="screen-banner" id="topBanner"><div class="sb-bg" style="background-image:url('pari.png')"></div><img class="sb-img" src="pari.png" alt="Pari Restaurant" onerror="this.style.display='none'"><a class="sb-link" href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"></a><a class="scroll-hint" href="#home" aria-label="Scroll down"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></a></section>
+<header id="home"><div class="wrap site-head"><a class="brand" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#12141A"/><circle cx="16" cy="16" r="9" fill="none" stroke="#FFC93C" stroke-width="2"/><circle cx="16" cy="16" r="4" fill="#2447F5"/></svg>Pari Restaurant</a><a class="head-cta" href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener">WhatsApp</a></div></header><main id="homeContent">
+  <section class="hero"><div class="wrap hero-grid"><div>
+    <h1>Pari Restaurant — <em>Good Food, Good Times</em></h1>
+    <p class="lead">Family restaurant with biryani, flavourful curries, tandoori starters and fresh naan. Visit us for a warm dining experience.</p>
+    <a class="btn-wa" href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .18 5.32.18 11.86c0 2.09.55 4.13 1.59 5.93L0 24l6.35-1.66a11.83 11.83 0 0 0 5.69 1.45h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.39-8.45z"/></svg>Get in Touch on WhatsApp</a>
+    <p class="hero-note">Flat 10% OFF on food · Family-friendly dining · Easy WhatsApp contact</p>
+  </div><div class="finder" aria-hidden="true"><span class="c2"></span><span class="c3"></span><div class="rec"><i></i> FRESH &amp; TASTY</div><svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><circle cx="200" cy="200" r="190" fill="none" stroke="#FFC93C" stroke-width="2"/><circle cx="200" cy="200" r="150" fill="#1B1F29" stroke="#2A2F3D" stroke-width="2"/><circle cx="200" cy="200" r="105" fill="#2447F5"/><circle cx="200" cy="200" r="72" fill="#12141A"/><path d="M150 210 Q200 140 250 210 Q200 275 150 210" fill="#FFC93C"/><circle cx="184" cy="192" r="8" fill="#fff"/></svg><div class="flash"></div></div></div></section>
+  <section class="big-wrap"><div class="big">
+    <div class="big-item b1"><span class="num">10%</span><span class="cap">OFF on Food</span><span class="sub">Enjoy flat 10% off on food</span></div>
+    <div class="big-item b2"><span class="num">Fresh</span><span class="cap">Flavours</span><span class="sub">Delicious food for every visit</span></div>
+    <div class="big-item b3"><span class="num">Family</span><span class="cap">Friendly</span><span class="sub">A warm place to enjoy a meal</span></div>
+  </div><div class="big-cta"><a class="btn-wa" href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener">Ask About the Offer on WhatsApp</a></div></section>
+  <div class="strip" aria-hidden="true"><div class="track"><span>Biryani</span><span>Rich Curries</span><span>Paneer Tikka</span><span>Fresh Naan</span><span>Salads</span><span>Chutneys &amp; Sides</span><span>Biryani</span><span>Rich Curries</span><span>Paneer Tikka</span><span>Fresh Naan</span><span>Salads</span><span>Chutneys &amp; Sides</span></div></div>
+  <section class="sec"><div class="wrap"><h2>Our Specialties</h2><p class="sec-sub">A taste of what you can enjoy at Pari Restaurant.</p><ul class="svc">
+    <li><h3>🍛 Biryani</h3><p>Aromatic, flavourful rice dishes for a satisfying meal.</p><a href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener">Ask on WhatsApp</a></li>
+    <li><h3>🥘 Rich Creamy Curries</h3><p>Comforting curries packed with flavour.</p><a href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener">Ask on WhatsApp</a></li>
+    <li><h3>🧀 Paneer Tikka</h3><p>A tasty vegetarian starter for sharing.</p><a href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener">Ask on WhatsApp</a></li>
+    <li><h3>🫓 Fresh Naan</h3><p>A classic accompaniment to your favourite curry.</p><a href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener">Ask on WhatsApp</a></li>
+    <li><h3>🥗 Salads, Chutneys &amp; Sides</h3><p>Fresh sides to round out your meal.</p><a href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener">Ask on WhatsApp</a></li>
+  </ul></div></section>
+  <section class="sec why"><div class="wrap"><h2>Why Choose Pari Restaurant?</h2><p class="sec-sub">Good food and a welcoming atmosphere.</p><ul class="why-list">
+    <li><b>Family-friendly setting</b><span>A comfortable place for lunch or dinner with loved ones.</span></li><li><b>Flavourful food</b><span>Enjoy a range of familiar Indian favourites.</span></li><li><b>Flat 10% OFF</b><span>Ask us about the food offer and applicable terms.</span></li><li><b>Easy WhatsApp contact</b><span>Message us to ask about menu, offers and details.</span></li>
+  </ul></div></section>
+  <section class="sec"><div class="wrap"><h2>Get in Touch in 3 Simple Steps</h2><p class="sec-sub">Ask about our menu and offer before visiting.</p><ol class="steps"><li><h3>Message us</h3><p>Tap the WhatsApp button to start a conversation.</p></li><li><h3>Ask your questions</h3><p>Get details about the menu, offer and availability.</p></li><li><h3>Enjoy your meal</h3><p>Visit Pari Restaurant and enjoy your food.</p></li></ol></div></section>
+  <section class="sec" style="padding-top:8px"><div class="wrap"><div class="cta-band"><div><h2>Craving something delicious?</h2><p>Message us on WhatsApp for menu, offers and other details.</p></div><a class="btn-wa" style="max-width:none" href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div></section>
+  <section class="sec" style="padding-top:8px"><div class="wrap"><h2>Frequently Asked Questions</h2><p class="sec-sub">Quick answers about Pari Restaurant.</p>
+    <details><summary>What food do you serve?</summary><p>Our highlights include biryani, creamy curries, paneer tikka, fresh naan, salads, chutneys and sides.</p></details>
+    <details><summary>Is there an offer available?</summary><p>The website displays a flat 10% OFF on food. Please contact Pari Restaurant to confirm applicable terms and availability.</p></details>
+    <details><summary>How can I ask about the menu?</summary><p>Use the WhatsApp buttons on this page to message us.</p></details>
+    <details><summary>Where can I read your policies?</summary><p>See the Privacy Policy and Terms &amp; Conditions links in the footer.</p></details>
+  </div></section>
+</main><footer><div class="wrap"><ul class="foot-links"><li><a href="#privacy" data-page="privacy">Privacy Policy</a></li><li><a href="#terms" data-page="terms">Terms &amp; Conditions</a></li></ul><p>Pari Restaurant · Contact us on WhatsApp for menu and offer details.</p><p>&copy; <span id="yr">2026</span> Pari Restaurant. All rights reserved.</p></div></footer><a class="fab" href="https://wa.me/15554703730?text=I%20Want%20bonaz%20!D" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">Chat</a>  <section id="privacy" class="legal-page" aria-labelledby="privacy-title">
     <div class="legal-card">
       <h1 id="privacy-title">Privacy Policy</h1>
       <p class="legal-meta">Effective Date: September 29, 2026</p>
@@ -376,7 +294,6 @@
     </div>
   </section>
 
-  <!-- Terms & Conditions -->
   <section id="terms" class="legal-page" aria-labelledby="terms-title">
     <div class="legal-card">
       <h1 id="terms-title">Terms &amp; Conditions</h1>
@@ -428,56 +345,10 @@
     </div>
   </section>
 
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="wa-glyph" viewBox="0 0 24 24"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .18 5.32.18 11.86c0 2.09.55 4.13 1.59 5.93L0 24l6.35-1.66a11.83 11.83 0 0 0 5.69 1.45h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.39-8.45zM12.05 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.77.99 1.01-3.67-.24-.38a9.87 9.87 0 0 1-1.52-5.3c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.45-4.44 9.89-9.86 9.89zm5.43-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></symbol>
-  </svg>
-
-  <script>
-    (function () {
-      const home = document.querySelector('main.wrap');
-      const privacy = document.getElementById('privacy');
-      const terms = document.getElementById('terms');
-      const pages = { privacy, terms };
-
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      function showPage(page) {
-        Object.values(pages).forEach(function (el) {
-          el.classList.remove('active');
-        });
-
-        if (page && pages[page]) {
-          home.style.display = 'none';
-          pages[page].classList.add('active');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          document.title = page === 'privacy'
-            ? 'Privacy Policy – Pari Restaurant'
-            : 'Terms & Conditions – Pari Restaurant';
-        } else {
-          home.style.display = '';
-          document.title = 'Pari Restaurant – Trusted Family Restaurant | Flat 10% OFF on Food';
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      }
-
-      function route() {
-        const page = window.location.hash.replace('#', '').toLowerCase();
-        showPage(page === 'privacy' || page === 'terms' ? page : '');
-      }
-
-      document.querySelectorAll('[data-page]').forEach(function (link) {
-        link.addEventListener('click', function () {
-          const page = this.getAttribute('data-page');
-          if (window.location.hash !== '#' + page) {
-            window.location.hash = page;
-          }
-        });
-      });
-
-      window.addEventListener('hashchange', route);
-      route();
-    })();
-  </script>
-
-</body>
-</html>
+<script>(function(){
+var home=document.getElementById('homeContent'),privacy=document.getElementById('privacy'),terms=document.getElementById('terms'),pages={privacy:privacy,terms:terms};
+function showPage(page){Object.values(pages).forEach(function(el){if(el)el.classList.remove('active')});if(page&&pages[page]){home.style.display='none';pages[page].classList.add('active');window.scrollTo({top:0,behavior:'smooth'});document.title=page==='privacy'?'Privacy Policy – Pari Restaurant':'Terms & Conditions – Pari Restaurant'}else{home.style.display='';document.title='Pari Restaurant – Trusted Family Restaurant | Flat 10% OFF on Food';window.scrollTo({top:0,behavior:'smooth'})}}
+function route(){var page=window.location.hash.replace('#','').toLowerCase();showPage(page==='privacy'||page==='terms'?page:'')}
+document.querySelectorAll('[data-page]').forEach(function(link){link.addEventListener('click',function(){var page=this.getAttribute('data-page');if(window.location.hash!=='#'+page)window.location.hash=page})});
+document.querySelectorAll('.back-home').forEach(function(link){link.addEventListener('click',function(){window.location.hash=''})});window.addEventListener('hashchange',route);
+var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();var fab=document.querySelector('.fab'),bn=document.getElementById('topBanner');function chk(){if(fab&&bn)fab.classList.toggle('hide',window.scrollY<bn.offsetHeight-80)}chk();window.addEventListener('scroll',chk,{passive:true});var img=document.querySelector('#topBanner img');if(img&&img.complete&&img.naturalWidth===0){bn.classList.add('no-img');img.style.display='none'}route();})();</script></body></html>
